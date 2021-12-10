@@ -14,4 +14,8 @@ import { View, Text, StyleSheet, Dimensions, Image, ScrollView, FlatList, TextIn
         )
     }
     export default App;
-        const styles = StyleSheet.create({})
+        const styles = StyleSheet.create({
+            container:{
+                flex:1,
+            }
+        })

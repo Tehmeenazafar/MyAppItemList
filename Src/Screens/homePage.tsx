@@ -84,7 +84,7 @@ var data = [{
                     <View>
                     {item.favourite == true ? (
                                 <TouchableOpacity style={{marginLeft:width*0.05, marginTop:height*0.02,}}>
-                                <Image style={{height:height*0.04,width:height*0.045}}
+                                <Image style={{height:height*0.04,width:height*0.046}}
                                     source={
                                         require("../../assests/images/likes.png")
                                     }/>
@@ -99,7 +99,7 @@ var data = [{
                             
                             }
 
-                            <View>
+                            <View style={{marginTop:height*0.01}}>
                                <Text>
                                    {item.date}
                                 </Text> 

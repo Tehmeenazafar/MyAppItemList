@@ -1,14 +1,15 @@
 
 import { initializeApp } from "firebase/app";
 
-const firebaseConfig = {
-  apiKey: "AIzaSyCrFI2Va0QzqB_F_UPRf_tDjs8Jp_M6T6k",
-  authDomain: "itemlistapp-4f23d.firebaseapp.com",
-  projectId: "itemlistapp-4f23d",
-  storageBucket: "itemlistapp-4f23d.appspot.com",
-  messagingSenderId: "1030999553938",
-  appId: "1:1030999553938:web:6ba373cc3a9b92b0a2f34b"
-};
+// const firebaseConfig = {
+//   apiKey: "AIzaSyBfT9lQ5vqIkvqguCf8409vTJDIAOLycB4",
+//   authDomain: "myappitemlist-e78b1.firebaseapp.com",
+//   projectId: "myappitemlist-e78b1",
+//   storageBucket: "myappitemlist-e78b1.appspot.com",
+//   messagingSenderId: "836046949133",
+//   appId: "1:836046949133:android:8fc151c46f63090b1dfe44"
+// };
 
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
+// // Initialize Firebase
+// console.log('firebase initialized')
+// const app = initializeApp(firebaseConfig);
