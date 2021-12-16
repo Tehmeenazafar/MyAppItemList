@@ -90,7 +90,7 @@ var data = [{
                                     }/>
                                 </TouchableOpacity>
                                 
-                            ): <TouchableOpacity style={{marginLeft:width*0.1, marginTop:height*0.02}}>
+                            ): <TouchableOpacity  style={{marginLeft:width*0.1, marginTop:height*0.02}}>
                                 <Image style={{height:height*0.04,width:height*0.045}}
                                     source={
                                         require("../../assests/images/unlike.png")
