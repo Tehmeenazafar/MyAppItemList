@@ -1,19 +1,22 @@
-import firebase from 'firebase/compat'
-import 'firebase/compat/auth';
-import 'firebase/compat/firestore';
+// import firebase from 'firebase/compat'
+// import 'firebase/compat/auth';
+// import 'firebase/compat/firestore';
 
-import { getFirestore } from "firebase/firestore"
-import { collection, addDoc } from "firebase/firestore"; 
+// import { getFirestore } from "firebase/firestore"
+// import { collection, addDoc } from "firebase/firestore"; 
+
+import firebase from '@react-native-firebase/app';
+import "@react-native-firebase/firestore";
 
 
 import React, { useState } from 'react'
 import { View, Text, StyleSheet, Dimensions, Image, ScrollView, FlatList, TextInput, Alert } from 'react-native'
 import { TouchableOpacity } from 'react-native-gesture-handler'
 import { Input,Button } from '../components'
+
 // interface Props {
 //     visible: false
 // }
-const db = getFirestore();
  const App: React.FC = (props) => {
      const [title , setTitle] = useState<string | null>(null);
      const [descrption , setDescription] = useState<string | null>(null);
@@ -23,33 +26,70 @@ const db = getFirestore();
         if(title && descrption){
             console.log("i am here 2")
             const data = {
-                title,
+                date:Date.now(),
                 descrption,
-                timeStamp:Date.now(),
                 favourite:false,
+                title,           
             }
-            // try{
-            //     console.log("i am here 3: ",data)
-            //     firebase.firestore().collection('Items').add(data).then((resp)=>{
-            //         console.log('here in add item')
-            //     },(err)=>{
-            //         console.log("here in error===>",err)
-            //     })
-            // }catch(err){   
-            //     console.log(err);
-            // }
+            try{
 
-            try {
-                const docRef = await addDoc(collection(db, "Items"), {
-                    title,
+
+
+                firebase.firestore().collection("Items").add({
+                    date:Date.now(),
                     descrption,
-                    timeStamp:Date.now(),
                     favourite:false,
-                });
-                console.log("Document written with ID: ", docRef.id);
-              } catch (e) {
-                console.error("Error adding document: ", e);
-              }
+                    title,           
+                }).then((resp)=>{
+                    console.log("i am here in if add data====> ",resp);
+                   
+                },()=>{
+                    console.log("in error")
+                })
+
+              firebase.firestore().collection("Items").get().then((resp)=>{
+                    console.log("i am here in if====> get ",resp.docs.length);
+                    resp.docs.forEach((item)=>{
+                        console.log("item====>",item.data())
+                    })
+                },()=>{
+                    console.log("in error")
+                })
+               
+
+
+                // console.log("i am here 3===>",data)
+                // firebase.firestore()
+                // .collection('Items')
+                // .doc('5SsEyli5iSBGM3zfHlM2')
+                // .set({
+                //     date:Date.now(),
+                //     descrption,
+                //     favourite:false,
+                //     title,           
+                // })
+                // .then((response) => {
+                //     console.log('response');
+                // },(err)=>{
+                //     console.log("i am here 4 err===>",err)
+                // });
+
+            }catch(err){   
+                console.log(err);
+            }
+
+          
+            // try {
+            //     const docRef = await addDoc(collection(db, "Items"), {
+            //         title,
+            //         descrption,
+            //         timeStamp:Date.now(),
+            //         favourite:false,
+            //     });
+            //     console.log("Document written with ID: ", docRef.id);
+            //   } catch (e) {
+            //     console.error("Error adding document: ", e);
+            //   }
               
 
         }else{

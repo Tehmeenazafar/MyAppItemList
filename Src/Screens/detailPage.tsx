@@ -14,6 +14,7 @@ import { View, Text, StyleSheet, Dimensions, Image, ScrollView, FlatList, TextIn
         )
     }
     export default App;
+<<<<<<< HEAD
         const styles = StyleSheet.create({})
 
 
@@ -105,3 +106,10 @@ import { View, Text, StyleSheet, Dimensions, Image, ScrollView, FlatList, TextIn
         //     flex: 1,
         //   },
         // });
+=======
+        const styles = StyleSheet.create({
+            container:{
+                flex:1,
+            }
+        })
+>>>>>>> 6d31c6604f9ccc28c8a0ec03fab18a31e2d402fe
